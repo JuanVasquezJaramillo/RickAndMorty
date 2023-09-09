@@ -4,23 +4,25 @@ const mainRouter = Router();
 //---------IMPORT DE HANDLERS---------------
 const getById = require('../Handlers/getCharById');
 const getCharByName = require('../Handlers/getCharByName');
+const getAllCharacters = require("../Handlers/getAllCharacters");
 
-const loginUser = require('../Handlers/loginUser');
-const postUser = require('../Handlers/postUser');
+// const loginUser = require('../Handlers/loginUser');
+// const postUser = require('../Handlers/postUser');
 
-const postFav = require('../Handlers/postCharFav');
-const deleteFav = require('../Handlers/deleteCharFav');
+// const postFav = require('../Handlers/postCharFav');
+// const deleteFav = require('../Handlers/deleteCharFav');
 //--------------------------------------------
 
 //-------ENRUTADO-----------
-mainRouter.get("/character/name", getCharByName);
-mainRouter.get('/character/:id', getById);
+mainRouter.get("/characters", getAllCharacters);
+// mainRouter.get("/character/name", getCharByName);
+// mainRouter.get('/character/:id', getById);
 
-mainRouter.get('/login', loginUser);
-mainRouter.post('/login', postUser);
+// mainRouter.get('/login', loginUser);
+// mainRouter.post('/login', postUser);
 
-mainRouter.post('/fav', postFav);
-mainRouter.delete('/fav/:id', deleteFav);
+// mainRouter.post('/fav', postFav);
+// mainRouter.delete('/fav/:id', deleteFav);
 
 module.exports = mainRouter;
 //-----------------------

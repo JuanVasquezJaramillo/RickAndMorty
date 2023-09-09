@@ -1,3 +1,5 @@
+import { GET_ALL_CHARACTERS } from "./actionsType.js";
+
 const initialState = {
     myFavorites: [],
     allCharacters: [],
@@ -5,12 +7,15 @@ const initialState = {
     allCharactersFav: [],
 }
 
-const rootReducer = (state = initialState, {type, payload}) => {
+const rootReducer = (state = initialState, { type, payload }) => {
+    console.log("AAA", payload);
     switch (type) {
-        case payload:
-            
+        case GET_ALL_CHARACTERS:
+            return {
+                ...state,
+                allCharacters: payload
+            }
             break;
-    
         default:
             break;
     }

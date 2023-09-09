@@ -1,4 +1,4 @@
-.contenedor {
+/* .contenedor {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -6,4 +6,11 @@
 
     margin: 10px;
     padding: 10px;
+} */
+
+.list{
+    width: 92vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
 }

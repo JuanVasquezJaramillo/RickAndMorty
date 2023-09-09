@@ -3,7 +3,7 @@ import style from './cards.module.css';
 
 const Cards = ({ characters }) => {
     return (
-        <div className={style.contenedor}>
+        <div className={style.list}>
             {
                 characters?.map(({ id, name, status, species, gender, origin, image }) => {
                     return <Card

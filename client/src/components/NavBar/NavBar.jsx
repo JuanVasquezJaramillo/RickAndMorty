@@ -3,10 +3,10 @@ import style from './nav.module.css';
 import { Link, NavLink } from 'react-router-dom';
 
 
-const NavBar = ({ onSearch }) => {
+const NavBar = () => {
     return (
         <div className={style.contenedor}>
-            <SearchBar onSearch={onSearch} />
+            <SearchBar />
             <Link to='/home'>
                 <button>
                     Home

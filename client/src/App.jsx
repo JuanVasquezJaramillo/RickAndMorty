@@ -3,8 +3,17 @@ import axios from "axios";
 import About from "./views/AboutPage/About"
 import Home from "./views/Home/Home";
 import Landing from "./views/LandingPage/Landing";
-axios.defaults.baseURL = "http://localhost:3001/";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { getAllCharacters } from "./Redux/actions";
+axios.defaults.baseURL = "http://localhost:3001";
+
 function App() {
+  // const dispatch = useDispatch();
+
+  // useEffect(() => {
+  //   dispatch(getAllCharacters());
+  // }, [])
 
   return (
     <>
