@@ -1,7 +1,12 @@
+import NavBar from '../../components/NavBar/NavBar';
 const Landing = () => {
     return (
         <>
-        <h1>AAA</h1>
+            <div style={{ maxWidth: '1000px', maxHeight: '1000px' }}>
+                <div style={{ position: 'absolute' }}>
+                    <NavBar />
+                </div>
+            </div>
         </>
     )
 }

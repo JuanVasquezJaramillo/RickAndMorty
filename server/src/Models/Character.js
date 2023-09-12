@@ -2,18 +2,18 @@ const { DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
    sequelize.define('Character', {
-      id:{
+      id: {
          type: DataTypes.INTEGER,
          allowNull: false,
          primaryKey: true,
-        // autoIncrement: true,
+         // autoIncrement: true,
       },
-      name:{
+      name: {
          type: DataTypes.STRING,
          allowNull: false,
       },
-      status:{
-         type: DataTypes.ENUM('Alive','Dead','unknown'),
+      status: {
+         type: DataTypes.ENUM('Alive', 'Dead', 'unknown'),
          allowNull: false,
       },
       species: {
@@ -21,10 +21,10 @@ module.exports = (sequelize) => {
          allowNull: false,
       },
       gender: {
-         type: DataTypes.ENUM('Female', 'Male', 'Genderless' , 'unknown'),
+         type: DataTypes.ENUM('Female', 'Male', 'Genderless', 'unknown'),
          allowNull: false,
       },
-      origin:{
+      origin: {
          type: DataTypes.STRING,
          allowNull: false,
       },
@@ -32,6 +32,6 @@ module.exports = (sequelize) => {
          type: DataTypes.STRING,
          allowNull: false,
       }
-   }, 
-   { timestamps: false });
+   },
+      { timestamps: false });
 };

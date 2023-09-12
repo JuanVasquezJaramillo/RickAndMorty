@@ -1,4 +1,9 @@
-.contenedor{
+.contenedorPadre {
+    display: flex;
+    justify-content: center;
+}
+
+.contenedorCard {
     display: flex;
     flex-direction: column;
     background-color: #fdddca;
@@ -6,9 +11,12 @@
     border-radius: 5px;
     text-align: center;
 }
-.contenedor{
+
+.contenedorCard {
     overflow: hidden;
 }
-.contenedor:hover{
-    -webkit-transform: scale(1.3);transform: scale(1.3);
+
+.contenedorCard:hover {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
 }

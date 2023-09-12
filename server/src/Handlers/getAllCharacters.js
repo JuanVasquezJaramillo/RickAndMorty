@@ -14,24 +14,23 @@ const getAllCharacters = async () => {
 
         const responses = await Promise.all(pagePromises);
         if (!charactersBD.length) {
-            const creandoC = responses.map(character => {
-                if (character.id !== null && character.id !== undefined) {
+            const creandoC = responses.map(char => {
+                if (char.id !== null && char.id !== undefined) {
                     return {
-                        id: character.id,
-                        name: character.name || "unknown",
-                        status: character.status || "unknown",
-                        species: character.species || "unknown",
-                        gender: character.gender || "unknown",
-                        origin: character.origin ? character.origin.name : "unknown",
-                        image: character.image || "Sin imagen",
+                        id: char.id,
+                        name: char.name || "unknown",
+                        status: char.status || "unknown",
+                        species: char.species || "unknown",
+                        gender: char.gender || "unknown",
+                        origin: char.origin ? char.origin.name : "unknown",
+                        image: char.image || "Sin imagen",
                     };
                 }
                 return null;
             }).filter(character => character !== null);
             await Character.bulkCreate(creandoC);
-            console.log("PROBANDO: ", creandoC);
         }
-        return {resultados: [...charactersBD, ...responses]};
+        return [...charactersBD, ...responses.flat()];
     } catch (error) {
         console.error("Error al obtener todos los personajes:", error.message);
         throw error;
