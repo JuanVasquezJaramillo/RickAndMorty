@@ -28,8 +28,8 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 characterDetail: action.payload
             }
-        case "OBTENER_EPISODIOS":
-            return{
+        case "OBTENER_EPISODIO_POR_ID":
+            return {
                 ...state,
                 episodios: action.payload
             }
