@@ -1,24 +1,41 @@
 import { GET_ALL_CHARACTERS } from "./actionsType.js";
 
 const initialState = {
-    myFavorites: [],
-    allCharacters: [],
     users: [],
+    myFavorites: [],
     allCharactersFav: [],
+    allCharacters: [],
+    characterDetail: [],
+    episodios: [],
 }
 
-const rootReducer = (state = initialState, { type, payload }) => {
-    console.log("AAA", payload);
-    switch (type) {
+
+const reducer = (state = initialState, action) => {
+    console.log("REDUCERRR", action.payload);
+    switch (action.type) {
         case GET_ALL_CHARACTERS:
             return {
                 ...state,
-                allCharacters: payload
+                allCharacters: action.payload
             }
-            break;
+        case "OBTENER_POR_PAGINA":
+            return {
+                ...state,
+                allCharacters: action.payload
+            }
+        case "OBTENER_POR_ID":
+            return {
+                ...state,
+                characterDetail: action.payload
+            }
+        case "OBTENER_EPISODIOS":
+            return{
+                ...state,
+                episodios: action.payload
+            }
         default:
-            break;
+            return { ...state }; //Siempre hay que retornar 'copias' del estado
     }
-}
+};
 
-export default rootReducer;
+export default reducer;

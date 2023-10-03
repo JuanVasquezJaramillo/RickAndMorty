@@ -13,7 +13,8 @@ const getCharById = async (req, res) => {
             origin: data.origin,
             image: data.image,
             status: data.status,
-            species: data.species
+            species: data.species,
+            episode: data.episode
         }
         return character.name ? res.json(character) : res.status(400).send('Not Found')
         // return res.status(200).json(character)

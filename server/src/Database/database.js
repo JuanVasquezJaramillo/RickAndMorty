@@ -18,10 +18,10 @@ CharacterModel(sequelize);
 FavoriteModel(sequelize);
 UserModel(sequelize);
 
-const { Favorite, User } = sequelize.models;
+const { Favorite, User, Character } = sequelize.models;
 
 User.belongsToMany(Favorite, { through: 'user_favorite' });
 
 Favorite.belongsToMany(User, { through: 'user_favorite' });
 
-module.exports = { sequelize, ...sequelize.models };
+module.exports = {Favorite, User, Character, sequelize, ...sequelize.models };
