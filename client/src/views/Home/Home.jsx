@@ -4,10 +4,17 @@ import { getAllCharacters } from "../../redux/actions";
 import Cards from '../../components/Cards/Cards'
 import estilo from './Home.module.css';
 import Paginado from '../../components/Paginado/Paginado';
-
+import SearchBar from '../../components/SearchBar/SearchBar';
+import NavBar from '../../components/NavBar/NavBar';
 const Home = () => {
     return (
         <>
+            <div>
+                <SearchBar />
+            </div>
+            <div>
+                <NavBar />
+            </div>
             <Paginado />
         </>
     )

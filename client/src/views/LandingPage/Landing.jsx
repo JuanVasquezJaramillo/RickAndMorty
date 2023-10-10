@@ -33,7 +33,7 @@ const Landing = () => {
                 <h1 className={style.title}>Rick And Morty</h1>
                 </section>
                 <div className={style.containerSomos}>
-                    <div className={style.prueba}>
+                    <div>
                         <h2 className={style.titleBis}>Resumen</h2>
                         <p className={style.parrafo}>
                             "Rick y Morty" es una serie animada para adultos que sigue las aventuras interdimensionales del científico alcohólico Rick Sánchez y su nieto adolescente, Morty Smith. La serie se caracteriza por su humor absurdo y oscuro, que combina elementos de ciencia ficción, comedia y drama.

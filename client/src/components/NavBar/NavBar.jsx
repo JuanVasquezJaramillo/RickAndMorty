@@ -6,8 +6,8 @@ import { Link, NavLink } from 'react-router-dom';
 const NavBar = () => {
     return (
         <div className={style.contenedor}>
-            <SearchBar />
-            <NavLink to='/home'> Inicio </NavLink>
+            {/* <SearchBar /> */}
+            <NavLink to='/'> Inicio </NavLink>
             <NavLink to='/about'> Acerca de </NavLink>
             <NavLink to='/favorites'> Favoritos </NavLink>
         </div>

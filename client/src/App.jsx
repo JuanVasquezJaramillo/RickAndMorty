@@ -19,10 +19,10 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Landing />}></Route>
-        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/about" element={<Landing />} />
         <Route path="/welcome" element={<Landing />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/more" element={<About />} />
         <Route path="/detail/:id" element={<Detail />} />
       </Routes>
     </>
