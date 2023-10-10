@@ -1,23 +1,32 @@
 .lista {
-    display: flex;
-    padding: 5px 2px;
-  }
+  display: flex;
+  padding: 5px 2px;
+}
+
 .contenedor {
-    display: inline-flex;
-    justify-content: center;
-    width: 50px;
-    background-color:#fdddca;
-    padding: 2px;
-    cursor: pointer;
-    border-radius: 2px;
-  }
-.buttonpage{
-    /* background-image: url(../../../assets/icons8-cubiertos-48.png); */
-    height: 48px;
-    width: 48px;
-    cursor: pointer;
-    border-radius: 2px;
-    background-color: transparent;
-    border: none;
-    padding: 2px;
-  }
+  display: inline-flex;
+  justify-content: center;
+  width: 50px;
+  background-color: #fdddca;
+  padding: 2px;
+  cursor: pointer;
+  border: 2px solid black;
+  border-radius: 2px;
+  padding-top: 21px;
+}
+
+.buttonpage {
+  /* background-image: url(../../../assets/icons8-cubiertos-48.png); */
+  height: 48px;
+  width: 48px;
+  cursor: pointer;
+  border-radius: 2px;
+  background-color: transparent;
+  border: none;
+  padding: 2px;
+}
+
+.contenedor :hover{
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}

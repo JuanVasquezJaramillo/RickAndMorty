@@ -22,8 +22,8 @@ const SearchBar = () => {
 
     return (
         <div className={style.contenedor}>
-            <input type='search'/>
-            <button >Buscar</button>
+            <input className={style.barra} type='search' />
+            <button className={style.boton}></button>
         </div>
     );
 }
