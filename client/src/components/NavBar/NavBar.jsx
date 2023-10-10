@@ -7,9 +7,19 @@ const NavBar = () => {
     return (
         <div className={style.contenedor}>
             {/* <SearchBar /> */}
-            <NavLink to='/'> Inicio </NavLink>
-            <NavLink to='/about'> Acerca de </NavLink>
-            <NavLink to='/favorites'> Favoritos </NavLink>
+            <Link to='/'>
+                <button className={style.boton}>Inicio</button>
+            </Link>
+            <Link to='/about'>
+                <button className={style.boton}>
+                    Acerca de
+                </button>
+            </Link>
+            <Link to='/favorites'>
+                <button className={style.boton}>
+                    Favoritos
+                </button>
+            </Link>
         </div>
     );
 }

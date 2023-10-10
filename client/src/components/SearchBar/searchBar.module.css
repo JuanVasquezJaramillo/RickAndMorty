@@ -1,43 +1,31 @@
-.barraNav {
-    background-color: burlywood;
-}
-
-.buscador {
+/*ESTILO PARA DIV*/
+.contenedor {
+    padding: 2px;
     display: flex;
     justify-content: center;
-    flex-direction: row;
 }
 
-.crear {
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: row;
+
+.barra {
+    display: block;
+    font-size: 16px; 
+    width: 400px; 
+    height: 35px; 
+    max-width: 100%;
+    box-sizing: border-box; 
+    border: 1px solid #aaa; 
+    border-radius: .3em;
+    cursor: text; 
+    padding: .4em 1.4em .3em .8em;
 }
 
 .boton {
-    /* width: fit-content;
-    height: fit-content;
-    cursor: pointer; */
-    padding: .4em 1.4em .3em .8em;
-    width: fit-content;
-    max-width: 100%;
-    box-sizing: border-box;
-    margin: 0;
-    border: 1px solid #aaa;
-    box-shadow: 0 1px 0 1px rgba (0, 0, 0, .03);
-    border-radius: .3em;
+    background-image: url(../../assets/icons8-search-35.png);
+    height: 35px;
+    width: 35px;
     cursor: pointer;
-}
-
-/*ESTILO PARA DIV*/
-.contenedor {
-    display: flex;
-    justify-content: center;
-}
-
-
-/*ESTILO BARRA*/
-.prueba {
-    height: 1.78cm;
-    /* background-image: url('../../../assets/wallPaperFood.jpg'); */
+    border-radius: 2px;
+    background-color: transparent;
+    border: 1px solid white;
+    padding: 2px;
 }

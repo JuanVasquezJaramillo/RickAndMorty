@@ -1,25 +1,22 @@
-.barraNav {
-    background-color: burlywood;
-}
-
-.buscador {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-}
-
-.crear {
+/*ESTILO PARA DIV*/
+.contenedor {
     display: flex;
     justify-content: space-evenly;
     flex-direction: row;
+    height: 1.78cm;
+    /* background-image: url(../../assets/fondoNav.png); */
+    background-position: 10%;
+    border-color: rgb(15, 15, 15);
+    border-radius: 5px;
+    border: 5px solid rgba(254, 254, 255, 0.747);
+    padding: 2px;
 }
 
 .boton {
-    /* width: fit-content;
-    height: fit-content;
-    cursor: pointer; */
-    padding: .4em 1.4em .3em .8em;
+    display: block;
     width: fit-content;
+    height: fit-content;
+    padding: .4em 1.4em .3em .8em;
     max-width: 100%;
     box-sizing: border-box;
     margin: 0;
@@ -27,17 +24,12 @@
     box-shadow: 0 1px 0 1px rgba (0, 0, 0, .03);
     border-radius: .3em;
     cursor: pointer;
+    background-image: linear-gradient(#11862b, #45fa1885);
+    
 }
 
-/*ESTILO PARA DIV*/
-.contenedor {
-    display: flex;
-    justify-content: center;
-}
+.boton:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
 
-
-/*ESTILO BARRA*/
-.prueba {
-    height: 1.78cm;
-    /* background-image: url('../../../assets/wallPaperFood.jpg'); */
 }
