@@ -6,7 +6,7 @@ const initialState = {
     allCharactersFav: [],
     allCharacters: [],
     characterDetail: [],
-    episodios: [],
+    episodios: {},
 }
 
 
@@ -29,6 +29,11 @@ const reducer = (state = initialState, action) => {
                 characterDetail: action.payload
             }
         case "OBTENER_EPISODIO_POR_ID":
+            return {
+                ...state,
+                episodios: action.payload
+            }
+        case "LIMPIAR_EPISODIOS":
             return {
                 ...state,
                 episodios: action.payload

@@ -60,3 +60,33 @@ export const ObtenerEpisodios = (id) => async (dispatch) => {
         console.log("ALGÚN ERROR", error.message);
     }
 }
+
+export const ObtenerEpisodiosPorPersonaje = (character) => async (dispatch) => {
+    try {
+        const probando = character?.episode?.map(index => {
+            return index.split('/').pop();
+        })
+        const respuestas = [];
+        respuestas.push((await axios.get(`https://rickandmortyapi.com/api/episode/${probando[0]}`)).data);
+        respuestas.push((await axios.get(`https://rickandmortyapi.com/api/episode/${probando[probando.length > 1 ? probando.length - 1 : 0]}`)).data);
+
+        return dispatch({
+            type: "OBTENER_EPISODIO_POR_ID",
+            payload: respuestas
+        })
+    } catch (error) {
+        console.log("ALGÚN ERROR", error.message);
+    }
+}
+
+
+export const limpiarEpisodios = () => async (dispatch) => {
+    try {
+        return dispatch({
+            type: "LIMPIAR_EPISODIOS",
+            payload: []
+        })
+    } catch (error) {
+        console.log("ALGÚN ERROR", error.message);
+    }
+}
