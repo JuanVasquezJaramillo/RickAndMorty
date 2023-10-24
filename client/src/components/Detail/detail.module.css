@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Mono:400');
+
 .contenedorPadre {
     display: flex;
 }
@@ -28,6 +30,7 @@
     padding: 40px;
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
     width: 400px;
+    font-style: italic;
     /* font-family: "get_schwifty"; */
 }
 
@@ -62,6 +65,11 @@
     margin-bottom: 20px;
 }
 
+.contenedorVideo:hover {
+    -webkit-transform: scale(1.01);
+    transform: scale(1.01);
+}
+
 .titleP1 {
     margin-bottom: 20px;
     font-size: 30px;
@@ -72,9 +80,31 @@
     width: 400px;
 }
 
-@font-face {
+/* @font-face {
     font-family: "get_schwifty";
     src: url(../../assets/get_schwifty.ttf);
+} */
+@font-face {
+    font-family: "Sandler_Trial";
+    src: url(../../assets/Sandler_Trial.otf);
+}
+
+.tituloEpisodio {
+    text-align: center;
+    font-family: "Sandler_Trial";
+    font-size: 30px;
+    -webkit-box-shadow: 10px 10px 43px 3px rgb(61, 192, 133);
+    -moz-box-shadow: 10px 10px 43px 3px rgb(156, 189, 174);
+    box-shadow: 10px 10px 43px 3px rgb(54, 63, 59);
+}
+
+.contenedorTituloEpisodio {
+    text-align: center;
+}
+
+.contenedorTituloEpisodio:hover {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.01);
 }
 
 
