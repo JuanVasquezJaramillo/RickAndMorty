@@ -15,6 +15,29 @@
   -webkit-text-size-adjust: 100%;
 }
 
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  background-color: #11862b;
+}
+
+::-webkit-scrollbar-button{
+  width: 9px;
+  height: 8px;
+  background-color: #117e86;
+}
+
+::-webkit-scrollbar-track{
+  width: 6px;
+  height: 6px;
+  background-color: #11862b;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: #117e86;
+}
+
+
 /*
 a {
   font-weight: 500;

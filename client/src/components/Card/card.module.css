@@ -8,7 +8,7 @@
 .contenedor:hover {
     /* background-color: antiquewhite; */
     -webkit-transform: scale(1.3);
-    transform: scale(1.3);
+    transform: scale(1.07);
 }
 
 .contenedor {

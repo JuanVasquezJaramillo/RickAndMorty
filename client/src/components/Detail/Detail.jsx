@@ -56,11 +56,15 @@ const Detail = () => {
                                             <p>Cargando...</p>
                                         ) : <>
                                             <h2 className={estilo.titleP1}>Primera aparición:</h2>
-                                            <p className={estilo.parrafo}>
-                                                {Apariciones[0]?.name}
-                                            </p>
+                                            <div className={estilo.contenedorTituloEpisodio}>
+                                                <p className={estilo.tituloEpisodio}>
+                                                    {Apariciones[0]?.name}
+                                                </p>
+                                            </div>
                                             <div className={estilo.contenedorVideo}>
-                                                <iframe width="703" height="350" src="https://www.youtube.com/embed/TLzuSk13Wsw" title="Rick and Morty | Pain is Pleasure | Adult Swim UK 🇬🇧" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                                {/* <iframe width="703" height="350" src="https://www.youtube.com/embed/TLzuSk13Wsw" title="Rick and Morty | Pain is Pleasure | Adult Swim UK 🇬🇧" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                             */}
+                                                <iframe width="716" height="403" src="https://www.youtube.com/embed/BFTSrbB2wII" title="Rick and Morty Season 1 extended promo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                                             </div>
                                         </>
                                     }
@@ -80,10 +84,17 @@ const Detail = () => {
                                             <h3 className={estilo.titleP1}>
                                                 Última aparición:
                                             </h3>
-                                            <p className={estilo.parrafo}>
-                                                {Apariciones[Apariciones.length > 1 ? Apariciones.length - 1 : 0]?.name}
-                                            </p>
-                                            <iframe width="703" height="403" src="https://www.youtube.com/embed/TLzuSk13Wsw" title="Rick and Morty | Pain is Pleasure | Adult Swim UK 🇬🇧" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                            <div className={estilo.contenedorTituloEpisodio}>
+                                                <p className={estilo.tituloEpisodio}>
+                                                    {Apariciones[Apariciones.length > 1 ? Apariciones.length - 1 : 0]?.name}
+                                                </p>
+                                            </div>
+                                            {/* <iframe width="703" height="403" src="https://www.youtube.com/embed/TLzuSk13Wsw" title="Rick and Morty | Pain is Pleasure | Adult Swim UK 🇬🇧" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                         */}
+                                            <div className={estilo.contenedorVideo}>
+                                                <iframe width="716" height="403" src="https://www.youtube.com/embed/L3naN_LG_sU" title="Rick and Morty | S5 Finale Cold Open: The Crow Man | adult swim" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+                                            </div>
                                         </>
                                     }
                                 </div>
