@@ -7,24 +7,28 @@ const getAllCharacters = async () => {
         const pagePromises = [];
         const charactersBD = await Character.findAll();
 
-        for (let i = 1; i <= 42; i++) {
-            let responsePage = (await axios.get(`${URL}?page=${i}`)).data.results;
+        for (let i = 0; i < 41; i++) {
+            const responsePage = (await axios.get(`${URL}?page=${i}`)).data.results;
             pagePromises.push(responsePage);
         }
 
         const responses = await Promise.all(pagePromises);
         if (!charactersBD.length) {
             const creandoC = responses.flat().map(char => {
-                return {
-                    id: char.id,
-                    name: char.name || "unknown",
-                    status: char.status || "unknown",
-                    species: char.species || "unknown",
-                    gender: char.gender || "unknown",
-                    origin: char.origin ? char.origin.name : "unknown",
-                    image: char.image ? char.image : "https://es.web.img3.acsta.net/pictures/18/10/31/17/34/2348073.jpg",
-                };
-            });
+                if (char.id !== null && char.id !== undefined) {
+                    return {
+                        id: char.id,
+                        name: char.name || "unknown",
+                        status: char.status || "unknown",
+                        species: char.species || "unknown",
+                        gender: char.gender || "unknown",
+                        origin: char.origin ? char.origin.name : "unknown",
+                        image: char.image ? char.image : "https://es.web.img3.acsta.net/pictures/18/10/31/17/34/2348073.jpg",
+                    };
+                }
+                return null;
+            }).filter(character => character !== null);
+            //console.log("ASDSDSDSDSD--------------", creandoC);
             await Character.bulkCreate(creandoC);
         }
         return [...charactersBD, ...responses.flat()];
