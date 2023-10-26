@@ -18,7 +18,7 @@ const { getEpisodeById } = require("../Handlers/getEpisodeByid");
 //-------ENRUTADO-----------
 mainRouter.get("/characters", getAllCharacters);
 mainRouter.get("/characters/page", getByPage);
-// mainRouter.get("/character/name", getCharByName);
+mainRouter.get("/characters/name", getCharByName);
 mainRouter.get('/characters/:id', getCharById);
 
 // mainRouter.get('/login', loginUser);
