@@ -15,7 +15,7 @@ export const getAllCharacters = () => async (dispatch) => {
 
 export const ObtenerPorPagina = (numPag) => async (dispatch) => {
     try {
-        const response = (await axios.get(`/characters/page?page=${numPag}`));
+        const response = (await axios.get(`/characters/page?page=${numPag}&size=19.5`));
         return dispatch({
             type: "OBTENER_POR_PAGINA",
             payload: response.data
@@ -85,6 +85,19 @@ export const limpiarEpisodios = () => async (dispatch) => {
         return dispatch({
             type: "LIMPIAR_EPISODIOS",
             payload: []
+        })
+    } catch (error) {
+        console.log("ALGÚN ERROR", error.message);
+    }
+}
+
+
+export const searchByName = (name) => async (dispatch) => {
+    try {
+        const response = (await axios.get(`characters/name?=${name}`));
+        return dispatch({
+            type: "OBTENER_PERSONAJE_POR_NOMBRE",
+            payload: response.data
         })
     } catch (error) {
         console.log("ALGÚN ERROR", error.message);

@@ -38,6 +38,11 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 episodios: action.payload
             }
+        case "OBTENER_PERSONAJE_POR_NOMBRE":
+            return {
+                ...state,
+                allCharacters: action.payload
+            }
         default:
             return { ...state }; //Siempre hay que retornar 'copias' del estado
     }
