@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import estilo from './detail.module.css'
 import { useDispatch, useSelector } from 'react-redux';
-import { ObtenerEpisodios, ObtenerEpisodiosPorPersonaje, ObtenerPorId, limpiarEpisodios } from '../../redux/actions';
+import { ObtenerEpisodiosPorPersonaje, ObtenerPorId } from '../../redux/actions';
 import NavBar from '../NavBar/NavBar';
 const Detail = () => {
     const { id } = useParams();

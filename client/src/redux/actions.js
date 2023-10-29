@@ -1,6 +1,9 @@
 import axios from "axios";
 import { GET_ALL_CHARACTERS } from "./actionsType.js";
 
+
+
+//-------------OBTENER TODOS LOS PERSONAJES----------
 export const getAllCharacters = () => async (dispatch) => {
     try {
         const response = (await axios.get('/characters'));
@@ -12,7 +15,10 @@ export const getAllCharacters = () => async (dispatch) => {
         console.log("ERROR al obtener todos los personajes", error.message);
     }
 }
+//-------------OBTENER TODOS LOS PERSONAJES----------
 
+
+//-------------OBTENER PERSONAJES POR PÁGINA----------
 export const ObtenerPorPagina = (numPag) => async (dispatch) => {
     try {
         const response = (await axios.get(`/characters/page?page=${numPag}&size=19.5`));
@@ -24,7 +30,10 @@ export const ObtenerPorPagina = (numPag) => async (dispatch) => {
         console.log("ALGÚN ERROR", error.message);
     }
 }
+//-------------OBTENER PERSONAJES POR PÁGINA----------
 
+
+//-------------OBTENER PERSONAJES POR ID PARA DETAIL----------
 export const ObtenerPorId = (id) => async (dispatch) => {
     try {
         const response = (await axios.get(`/characters/${id}`));
@@ -36,31 +45,10 @@ export const ObtenerPorId = (id) => async (dispatch) => {
         console.log("ALGÚN ERROR", error.message);
     }
 }
+//-------------OBTENER PERSONAJES POR ID PARA DETAIL----------
 
-// export const ObtenerEpisodios = () => async (dispatch) => {
-//     try {
-//         const response = (await axios.get(`/episodes`));
-//         return dispatch({
-//             type: "OBTENER_EPISODIOS",
-//             payload: response.data
-//         })
-//     } catch (error) {
-//         console.log("ALGÚN ERROR", error.message);
-//     }
-// }
 
-export const ObtenerEpisodios = (id) => async (dispatch) => {
-    try {
-        const response = (await axios.get(`/episodes/${id}`));
-        return dispatch({
-            type: "OBTENER_EPISODIO_POR_ID",
-            payload: response.data
-        })
-    } catch (error) {
-        console.log("ALGÚN ERROR", error.message);
-    }
-}
-
+//-------------OBTENER EPISODIOS DE PERSONAJE PARA DETAIL----------
 export const ObtenerEpisodiosPorPersonaje = (character) => async (dispatch) => {
     try {
         const probando = character?.episode?.map(index => {
@@ -78,28 +66,31 @@ export const ObtenerEpisodiosPorPersonaje = (character) => async (dispatch) => {
         console.log("ALGÚN ERROR", error.message);
     }
 }
+//-------------OBTENER EPISODIOS DE PERSONAJE PARA DETAIL----------
 
 
-export const limpiarEpisodios = () => async (dispatch) => {
-    try {
-        return dispatch({
-            type: "LIMPIAR_EPISODIOS",
-            payload: []
-        })
-    } catch (error) {
-        console.log("ALGÚN ERROR", error.message);
-    }
-}
-
-
+//-------------OBTENER PERSONAJE POR SU NOMBRE----------
 export const searchByName = (name) => async (dispatch) => {
     try {
-        const response = (await axios.get(`characters/name?=${name}`));
+        const response = (await axios.get(`characters/name?name=${name}`));
         return dispatch({
             type: "OBTENER_PERSONAJE_POR_NOMBRE",
             payload: response.data
         })
     } catch (error) {
         console.log("ALGÚN ERROR", error.message);
+    }
+}
+//-------------OBTENER PERSONAJE POR SU NOMBRE----------
+
+
+export const paginaActual = (pagActual) => async (dispatch) => {
+    try {
+        return dispatch({
+            type: "SETEAR_PAGINA",
+            payload: pagActual
+        })
+    } catch (error) {
+        console.log("ALGO FALLÓ", error.message);       
     }
 }

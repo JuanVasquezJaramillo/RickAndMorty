@@ -2,21 +2,19 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from "react";
 import estilo from './paginado.module.css'
 import Cards from '../../components/Cards/Cards'
-import { ObtenerPorPagina } from '../../redux/actions';
+import { ObtenerPorPagina, paginaActual } from '../../redux/actions';
 const Paginado = () => {
 
     const dispatch = useDispatch();
-    const probando = useSelector(state => state.allCharacters);
-    console.log("ASDSDSDs", probando);
-    const Characters = [800];
-    const [currentPag, setCurrentPag] = useState(1);
-    const [cantidadPorPag] = useState(19.5);
-    const indiceUltimaReceta = currentPag * cantidadPorPag
-    const indicePrimerReceta = indiceUltimaReceta - cantidadPorPag
-    const currentCharacters = Characters.slice(indicePrimerReceta, indiceUltimaReceta)
-
+    const probando = useSelector(state => state.CharactersByPage);
+    console.log("PERSONAJES PAGINADO", probando);
+    // const Characters = useSelector(state => state.allCharacters.length);
+    // console.log("PERSONAJES", Characters);
+    const Characters = [826]
+    const currentPag = useSelector(state => state.paginaActual);
+    const [cantidadPorPag] = useState(20);
     const paginado = (pageNumber) => {
-        setCurrentPag(pageNumber);
+        dispatch(paginaActual(pageNumber));
         dispatch(ObtenerPorPagina(pageNumber));
     }
     // useEffect(() => {
@@ -24,23 +22,23 @@ const Paginado = () => {
     // })
 
 
-    console.log("HOLAAAAAAAAA", currentPag);
+    console.log("PAGINA", currentPag);
 
     const paginasDisponibles = []
 
-    for (let i = 1; i <= Math.ceil(Characters / cantidadPorPag); i++) {
+    for (let i = 0; i <= Math.ceil(Characters / cantidadPorPag); i++) {
         paginasDisponibles.push(i)
     }
 
     const prevButton = () => {
-        if (currentPag != 1) {
-            setCurrentPag((prevIndex) => (prevIndex - 1 + paginasDisponibles.length) % paginasDisponibles.length);
+        if (currentPag != 0) {
+            dispatch(paginaActual((currentPag - 1 + paginasDisponibles.length) % paginasDisponibles.length));
             dispatch(ObtenerPorPagina(currentPag - 1));
         }
     }
     const nextButton = () => {
         if (currentPag != 42) {
-            setCurrentPag((prevIndex) => (prevIndex + 1) % paginasDisponibles.length);
+            dispatch(paginaActual((currentPag + 1) % paginasDisponibles.length));
             dispatch(ObtenerPorPagina(currentPag + 1));
         }
     }

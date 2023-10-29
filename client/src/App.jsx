@@ -4,15 +4,17 @@ import About from "./views/AboutPage/About"
 import Home from "./views/Home/Home";
 import Landing from "./views/LandingPage/Landing";
 import Detail from './components/Detail/Detail';
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getAllCharacters } from "./redux/actions";
 axios.defaults.baseURL = "http://localhost:3001";
 
 function App() {
   // const dispatch = useDispatch();
-
+  // const Characters = useSelector(state => state.allCharacters.length)
+  
   // useEffect(() => {
+  //   if(!Characters)
   //   dispatch(getAllCharacters());
   // }, [])
 
