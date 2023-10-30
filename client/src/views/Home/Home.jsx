@@ -9,7 +9,7 @@ import NavBar from '../../components/NavBar/NavBar';
 const Home = () => {
     return (
         <>
-            <div>
+            <div className={estilo.contenedorSearchBar}>
                 <SearchBar />
             </div>
             <div>

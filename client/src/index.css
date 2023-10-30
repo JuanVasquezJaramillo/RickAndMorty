@@ -21,21 +21,31 @@
   background-color: #11862b;
 }
 
-::-webkit-scrollbar-button{
+::-webkit-scrollbar-button {
   width: 9px;
   height: 8px;
   background-color: #117e86;
 }
 
-::-webkit-scrollbar-track{
+::-webkit-scrollbar-track {
   width: 6px;
   height: 6px;
   background-color: #11862b;
 }
 
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
   background-color: #117e86;
 }
+
+button {
+  background-color: black;
+  cursor: pointer;
+}
+
+button:hover {
+  border-color: #646cff;
+}
+
 
 
 /*
@@ -72,13 +82,7 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
+
 
 @media (prefers-color-scheme: light) {
   :root {
