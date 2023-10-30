@@ -26,8 +26,10 @@ const getAllCharacters = async () => {
                 };
             });
             await Character.bulkCreate(creandoC);
+            return [...responses.flat()];
+        } else if (charactersBD.length > 0) {
+            return [...charactersBD];
         }
-        return [...charactersBD, ...responses.flat()];
     } catch (error) {
         console.error("Error al obtener todos los personajes:", error.message);
         throw error;

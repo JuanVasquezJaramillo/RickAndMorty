@@ -3,13 +3,13 @@ import { GET_ALL_CHARACTERS } from "./actionsType.js";
 const initialState = {
     users: [],
     myFavorites: [],
-    allCharactersFav: [],
     allCharacters: [],
     characterDetail: [],
     episodios: {},
     paginaActual: 0,
     CharactersByPage: [],
     getByName: [],
+    userSearchB: false,
 }
 
 
@@ -39,12 +39,17 @@ const reducer = (state = initialState, action) => {
         case "OBTENER_PERSONAJE_POR_NOMBRE":
             return {
                 ...state,
-                allCharacters: action.payload
+                CharactersByPage: action.payload
             }
         case "SETEAR_PAGINA":
-            return{
+            return {
                 ...state,
                 paginaActual: action.payload
+            }
+        case "BUSCÓ PERSONAJE":
+            return {
+                ...state,
+                userSearchB: action.payload
             }
         default:
             return { ...state }; //Siempre hay que retornar 'copias' del estado
