@@ -10,13 +10,13 @@ import { getAllCharacters } from "./redux/actions";
 axios.defaults.baseURL = "http://localhost:3001";
 
 function App() {
-  // const dispatch = useDispatch();
-  // const Characters = useSelector(state => state.allCharacters.length)
+  const dispatch = useDispatch();
+  const Characters = useSelector(state => state.allCharacters.length)
   
-  // useEffect(() => {
-  //   if(!Characters)
-  //   dispatch(getAllCharacters());
-  // }, [])
+  useEffect(() => {
+    if(!Characters)
+    dispatch(getAllCharacters());
+  }, [])
 
   return (
     <>

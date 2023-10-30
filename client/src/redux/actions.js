@@ -83,7 +83,7 @@ export const searchByName = (name) => async (dispatch) => {
 }
 //-------------OBTENER PERSONAJE POR SU NOMBRE----------
 
-
+//-------------SETEAR PAGINA ACTUAL----------
 export const paginaActual = (pagActual) => async (dispatch) => {
     try {
         return dispatch({
@@ -91,6 +91,19 @@ export const paginaActual = (pagActual) => async (dispatch) => {
             payload: pagActual
         })
     } catch (error) {
-        console.log("ALGO FALLÓ", error.message);       
+        console.log("ALGO FALLÓ", error.message);
+    }
+}
+//-------------SETEAR PAGINA ACTUAL----------
+
+
+export const userSearch = (boolean) => async (dispatch) => {
+    try {
+        return dispatch({
+            type: "BUSCÓ PERSONAJE",
+            payload: boolean
+        })
+    } catch (error) {
+        console.log("ALGO FALLÓ EN userSEARCH");       
     }
 }

@@ -2,32 +2,25 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from "react";
 import estilo from './paginado.module.css'
 import Cards from '../../components/Cards/Cards'
-import { ObtenerPorPagina, paginaActual } from '../../redux/actions';
+import { ObtenerPorPagina, paginaActual, userSearch } from '../../redux/actions';
 const Paginado = () => {
 
     const dispatch = useDispatch();
-    const probando = useSelector(state => state.CharactersByPage);
-    console.log("PERSONAJES PAGINADO", probando);
-    // const Characters = useSelector(state => state.allCharacters.length);
-    // console.log("PERSONAJES", Characters);
-    const Characters = [826]
+    const personajesXPag = useSelector(state => state.CharactersByPage);
+    const Characters = useSelector(state => state.allCharacters.length);
     const currentPag = useSelector(state => state.paginaActual);
+    const userSearchG = useSelector(state => state.userSearchB);
     const [cantidadPorPag] = useState(20);
-    const paginado = (pageNumber) => {
-        dispatch(paginaActual(pageNumber));
-        dispatch(ObtenerPorPagina(pageNumber));
-    }
-    // useEffect(() => {
-    //     dispatch(getAllCharacters());
-    // })
-
-
-    console.log("PAGINA", currentPag);
-
     const paginasDisponibles = []
 
     for (let i = 0; i <= Math.ceil(Characters / cantidadPorPag); i++) {
         paginasDisponibles.push(i)
+    }
+
+
+    const paginado = (pageNumber) => {
+        dispatch(paginaActual(pageNumber));
+        dispatch(ObtenerPorPagina(pageNumber));
     }
 
     const prevButton = () => {
@@ -43,28 +36,45 @@ const Paginado = () => {
         }
     }
 
+    const limpiarBusqueda = () => {
+        dispatch(paginaActual(0));
+        dispatch(ObtenerPorPagina(0));
+        dispatch(userSearch(false));
+    }
+
+
     return (
         <>
             <div className={estilo.contenedorCards}>
-                <button onClick={() => prevButton()}>anterior</button>
-                {paginasDisponibles && paginasDisponibles.map(number => (
-                    number == currentPag
-                        ?
-                        <div className={estilo} key={number}>
-                            <button className={estilo.buttonpageSelected} onClick={() => paginado(number)}> {number}  </button>
-                        </div>
+                {
+                    userSearchG
+                        ? <button onClick={() => limpiarBusqueda()}>VOLVER</button>
                         :
-                        <div className={estilo.contenedor} key={number}>
-                            <button className={estilo.buttonpage} onClick={() => paginado(number)}> {number}  </button>
-                        </div>
-                ))}
-                <button onClick={() => nextButton()}>siguiente</button>
+                        <>
+                            <button onClick={() => prevButton()}>anterior</button>
+                            {paginasDisponibles && paginasDisponibles.map(number => (
+                                number == currentPag
+                                    ?
+                                    <div className={estilo} key={number}>
+                                        <button className={estilo.buttonpageSelected} onClick={() => paginado(number)}> {number + 1}  </button>
+                                    </div>
+                                    :
+                                    <div className={estilo.contenedor} key={number}>
+                                        <button className={estilo.buttonpage} onClick={() => paginado(number)}> {number + 1}  </button>
+                                    </div>
+                            ))}
+                            <button onClick={() => nextButton()}>siguiente</button>
+                        </>
+                }
             </div>
+
+
             <div>
                 <div className={estilo.contenedorCards}>
-                    <Cards characters={probando} />
+                    <Cards characters={personajesXPag} />
                 </div>
             </div>
+
         </>
     )
 }
