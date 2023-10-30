@@ -7,6 +7,9 @@ const initialState = {
     allCharacters: [],
     characterDetail: [],
     episodios: {},
+    paginaActual: 0,
+    CharactersByPage: [],
+    getByName: [],
 }
 
 
@@ -21,7 +24,7 @@ const reducer = (state = initialState, action) => {
         case "OBTENER_POR_PAGINA":
             return {
                 ...state,
-                allCharacters: action.payload
+                CharactersByPage: action.payload
             }
         case "OBTENER_POR_ID":
             return {
@@ -33,15 +36,15 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 episodios: action.payload
             }
-        case "LIMPIAR_EPISODIOS":
-            return {
-                ...state,
-                episodios: action.payload
-            }
         case "OBTENER_PERSONAJE_POR_NOMBRE":
             return {
                 ...state,
                 allCharacters: action.payload
+            }
+        case "SETEAR_PAGINA":
+            return{
+                ...state,
+                paginaActual: action.payload
             }
         default:
             return { ...state }; //Siempre hay que retornar 'copias' del estado
