@@ -1,13 +1,25 @@
 const axios = require('axios');
 const { Character } = require('../Database/database');
+const { Op } = require('sequelize');
 module.exports = async (req, res) => {
     try {
         let { name } = req.query;
         if (name) {
-            const bdCharacters = await Character.findAll();
-            const results = bdCharacters.filter((char) => char.name.toLowerCase().includes(name.toLowerCase()));
+            //-----------------OPCIÓN USANDO METODOS SQL-----------------------
+            const bdCharacters = await Character.findAll({
+                where: {
+                    name: { [Op.iLike]: `%${name}%` },
+                }
+            });
+            //-----------------OPCIÓN USANDO METODOS SQL-----------------------
+            
+            
+            //const bdCharacters = await Character.findAll();
+            //const results = bdCharacters.filter((char) => char.name.toLowerCase().includes(name.toLowerCase()));
+            
             if (bdCharacters.length > 0) {
-                res.status(200).json(results);
+                res.status(200).json(bdCharacters); //OPCIÓN USANDO SQL
+                // res.status(200).json(results);
             } else {
                 res.status(404).send('No se encontraron personajes con ese nombre');
             }
