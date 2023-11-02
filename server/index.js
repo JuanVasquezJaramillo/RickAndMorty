@@ -5,6 +5,6 @@ require('dotenv').config();
 const PORT = process.env.PORT;
 
 app.listen(PORT, () => {
-  sequelize.sync({ force: true });
+  sequelize.sync({ force: false });
   console.log(`Servidor levantado en el puerto: ${PORT}`);
 });
