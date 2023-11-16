@@ -1,20 +1,20 @@
 const { Character } = require('../../Database/database');
 const { filterByGender, filterByStatus, filterByStatusAndGender } = require('../../Controllers/FiltersControllers/FiltersControllers');
 
+const aMayus = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 module.exports = async (req, res) => {
     const { gender, status, page, size } = req.query;
     let characters;
     try {
-        let options = {
-            limit: +size,
-            offset: (+page) * (+size),
-        };
         if (!gender && status) {
-            characters = await filterByStatus(status, options);
+            characters = await filterByStatus(aMayus(status), page, size);
         } else if (gender && !status) {
-            characters = await filterByGender(gender, options);
-        } else { 
-            characters = await filterByStatusAndGender(status, gender, options);
+            characters = await filterByGender(aMayus(gender), page, size);
+        } else {
+            characters = await filterByStatusAndGender(aMayus(status), aMayus(gender), page, size);
         }
         res.status(200).json(characters);
     } catch (error) {
