@@ -27,6 +27,38 @@
     */
     background-color: #11862a86;
     padding: 20px;
-    display: flex;
-    justify-content: center;
+}
+
+/*ESTILOS BARRA LATERAL DESPLEGABLE*/
+.contenedorSideBar {
+    width: 240px;
+    z-index: +1;
+    background-color: rgba(0, 0, 0, 0.555);
+    position: absolute;
+    height: 95vh;
+    padding: 0 30px;
+    transition: all 1s;
+}
+
+ul {
+    padding: 0;
+}
+
+ul li {
+    list-style-type: none;
+    margin: 10px 0;
+}
+
+ul li a {
+    color: rgb(155, 59, 59);
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 6px;
+}
+
+ul li a:hover,
+ul li a.active {
+    background: #fdddca;
 }
