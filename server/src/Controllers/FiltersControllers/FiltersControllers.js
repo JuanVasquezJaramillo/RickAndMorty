@@ -5,7 +5,7 @@ const filterByGender = async (cGender, page, size) => {
     // const characterByGender = await Character.findAll({ where: { gender: cGender } });
     // if (!characterByGender.length) return [];
     // return characterByGender;
-    const { rows } = await Character.findAndCountAll({ where: { status: cGender }, limit: +size, offset: (+page) * (+size) });
+    const { rows } = await Character.findAndCountAll({ where: { gender: cGender }, limit: +size, offset: (+page) * (+size) });
     if (!rows) return [];
     return rows;
 }
