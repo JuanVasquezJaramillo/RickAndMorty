@@ -9,6 +9,7 @@ const getByPage = require("../Handlers/getByPage");
 const { getEpisodeChar } = require("../Handlers/getEpisodeChar");
 const { getEpisodeById } = require("../Handlers/getEpisodeByid");
 const filterHandler = require('../Handlers/FiltersHandlers/filterHandler');
+const orderHandler = require('../Handlers/OrderHandlers/orderHandlers');
 // const loginUser = require('../Handlers/loginUser');
 // const postUser = require('../Handlers/postUser');
 
@@ -31,8 +32,8 @@ mainRouter.get('/characters/:id', getCharById);
 mainRouter.get('/episodes', getEpisodeChar);
 mainRouter.get('/episodes/:id', getEpisodeById);
 
-mainRouter.get('/filters',filterHandler);
-
+mainRouter.get('/filters', filterHandler);
+mainRouter.get('/orders', orderHandler);
 
 
 module.exports = mainRouter;
