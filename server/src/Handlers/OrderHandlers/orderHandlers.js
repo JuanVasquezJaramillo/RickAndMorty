@@ -2,7 +2,6 @@ const { orderByNameAsc, orderByNameDes, noOrderByName } = require('../../Control
 
 module.exports = async (req, res) => {
     const { orderby, page, size } = req.query;
-    console.log('ORDER', orderby);
     let characters
     try {
         if (!orderby || !page || !size ) {

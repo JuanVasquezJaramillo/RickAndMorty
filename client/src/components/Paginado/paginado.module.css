@@ -54,3 +54,9 @@
   justify-content: center;
   padding: 20px;
 }
+
+.contenedorFiltros {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px;
+}
