@@ -10,7 +10,6 @@ const orderByNameAsc = async (page, size) => {
         return 0;
     })
     if (!rows) return [];
-    console.log('ROWS orderBYNAME', rowsOrdenadas);
     return rowsOrdenadas;
 }
 

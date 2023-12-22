@@ -45,6 +45,25 @@ const Paginado = () => {
 
     return (
         <>
+            <div className={estilo.contenedorFiltros}>
+                <select name="" id="" >
+                    <option value="any">CUALQUIER ORDEN</option>
+                    <option value="asc">↑ ORDERNAR DE A-Z</option>
+                    <option value="desc">↓ ORDERNAR DE Z-A</option>
+                </select>
+                <select name="" id="">
+                    <option value="anyStatus">CUALQUIER ESTADO</option>
+                    <option value="alive">VIVO</option>
+                    <option value="dead">MUERTO</option>
+                    <option value="unknown">DESCONOCIDO</option>
+                </select>
+                <select name="" id="">
+                    <option value="anyGender">CUALQUIER GÉNERO</option>
+                    <option value="Female">FEMENINO</option>
+                    <option value="Male">MASCULINO</option>
+                    <option value="unknownGender">DESCONOCIDO</option>
+                </select>
+            </div>
             <div className={estilo.contenedorCards}>
                 {
                     userSearchG

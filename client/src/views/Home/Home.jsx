@@ -9,8 +9,8 @@ import NavBar from '../../components/NavBar/NavBar';
 const Home = () => {
     return (
         <>
-        <div className={estilo.contenedorSearchBar}>
-            {/* <div > */}
+            <div className={estilo.contenedorSearchBar}>
+                {/* <div > */}
                 {/* <div className={estilo.contenedorSideBar}>
                     <ul>
                         <li>
