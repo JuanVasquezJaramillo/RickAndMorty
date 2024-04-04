@@ -48,8 +48,8 @@ const Paginado = () => {
             <div className={estilo.contenedorFiltros}>
                 <select name="" id="" >
                     <option value="any">CUALQUIER ORDEN</option>
-                    <option value="asc">↑ ORDERNAR DE A-Z</option>
-                    <option value="desc">↓ ORDERNAR DE Z-A</option>
+                    <option value="asc">↑ ORDENAR DE A-Z</option>
+                    <option value="desc">↓ ORDENAR DE Z-A</option>
                 </select>
                 <select name="" id="">
                     <option value="anyStatus">CUALQUIER ESTADO</option>
@@ -61,6 +61,7 @@ const Paginado = () => {
                     <option value="anyGender">CUALQUIER GÉNERO</option>
                     <option value="Female">FEMENINO</option>
                     <option value="Male">MASCULINO</option>
+                    <option value="Genderless">SIN GÉNERO</option>
                     <option value="unknownGender">DESCONOCIDO</option>
                 </select>
             </div>
