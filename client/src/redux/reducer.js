@@ -14,7 +14,7 @@ const initialState = {
 
 
 const reducer = (state = initialState, action) => {
-    console.log("REDUCERRR", action.payload);
+    console.log("BANDERA REDUCER, ACTION.PAYLOAD:", action.payload);
     switch (action.type) {
         case GET_ALL_CHARACTERS:
             return {
@@ -50,6 +50,11 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 userSearchB: action.payload
+            }
+        case "ORDENAR":
+            return {
+                ...state,
+                CharactersByPage: action.payload
             }
         default:
             return { ...state }; //Siempre hay que retornar 'copias' del estado
