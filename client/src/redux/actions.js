@@ -104,6 +104,19 @@ export const userSearch = (boolean) => async (dispatch) => {
             payload: boolean
         })
     } catch (error) {
-        console.log("ALGO FALLÓ EN userSEARCH");       
+        console.log("ALGO FALLÓ EN userSEARCH");
+    }
+}
+
+export const handleOrderCharacters = (orden, pag) => async (dispatch) => {
+    try { 
+        const response = (await axios.get(`orders/?orderby=${orden}&page=${pag}&size=19.5`)).data;
+        console.log("BANDERA RESPONSE.DATA", response);
+        return dispatch({
+            type: "ORDENAR",
+            payload: response
+        })
+    } catch (error) {
+        console.log("ALGO FALLÓ EN: orderCharacters.");
     }
 }

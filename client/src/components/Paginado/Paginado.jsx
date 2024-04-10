@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from "react";
 import estilo from './paginado.module.css'
 import Cards from '../../components/Cards/Cards'
-import { ObtenerPorPagina, paginaActual, userSearch } from '../../redux/actions';
+import { ObtenerPorPagina, paginaActual, userSearch, handleOrderCharacters} from '../../redux/actions';
 const Paginado = () => {
 
     const dispatch = useDispatch();
@@ -42,11 +42,17 @@ const Paginado = () => {
         dispatch(userSearch(false));
     }
 
+    const handleOrder = (event) => {
+        event.preventDefault();
+        console.log("BANDERA DE MÉTODO HANDLEORDER:", event.target.value);
+        dispatch(handleOrderCharacters(event.target.value, currentPag));
+        dispatch(paginaActual(currentPag))
+    }
 
     return (
         <>
             <div className={estilo.contenedorFiltros}>
-                <select name="" id="" >
+                <select name="" id="" onChange={event => handleOrder(event)} >
                     <option value="any">CUALQUIER ORDEN</option>
                     <option value="asc">↑ ORDENAR DE A-Z</option>
                     <option value="desc">↓ ORDENAR DE Z-A</option>
