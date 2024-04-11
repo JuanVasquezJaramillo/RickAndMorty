@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from "react";
 import estilo from './paginado.module.css'
 import Cards from '../../components/Cards/Cards'
-import { ObtenerPorPagina, paginaActual, userSearch, handleOrderCharacters} from '../../redux/actions';
+import { ObtenerPorPagina, paginaActual, userSearch, handleOrderCharacters, handleStatusCharacters, handleGenderCharacters } from '../../redux/actions';
 const Paginado = () => {
 
     const dispatch = useDispatch();
@@ -49,6 +49,18 @@ const Paginado = () => {
         dispatch(paginaActual(currentPag))
     }
 
+    const handleStatus = (event) => {
+        event.preventDefault();
+        dispatch(handleStatusCharacters(event.target.value, currentPag));
+        dispatch(paginaActual(currentPag));
+    }
+
+    const handleGender = (event) => {
+        event.preventDefault();
+        dispatch(handleGenderCharacters(event.target.value, currentPag));
+        dispatch(paginaActual(currentPag));
+    }
+
     return (
         <>
             <div className={estilo.contenedorFiltros}>
@@ -57,18 +69,18 @@ const Paginado = () => {
                     <option value="asc">↑ ORDENAR DE A-Z</option>
                     <option value="desc">↓ ORDENAR DE Z-A</option>
                 </select>
-                <select name="" id="">
+                <select name="" id="" onChange={event => handleStatus(event)}>
                     <option value="anyStatus">CUALQUIER ESTADO</option>
                     <option value="alive">VIVO</option>
                     <option value="dead">MUERTO</option>
                     <option value="unknown">DESCONOCIDO</option>
                 </select>
-                <select name="" id="">
+                <select name="" id="" onChange={event => handleGender(event)}>
                     <option value="anyGender">CUALQUIER GÉNERO</option>
                     <option value="Female">FEMENINO</option>
                     <option value="Male">MASCULINO</option>
                     <option value="Genderless">SIN GÉNERO</option>
-                    <option value="unknownGender">DESCONOCIDO</option>
+                    <option value="unknown">DESCONOCIDO</option>
                 </select>
             </div>
             <div className={estilo.contenedorCards}>
