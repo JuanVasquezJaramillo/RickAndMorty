@@ -1,5 +1,5 @@
 const { Character } = require('../../Database/database');
-const { filterByGender, filterByStatus, filterByStatusAndGender } = require('../../Controllers/FiltersControllers/FiltersControllers');
+const { filterByGender, filterByStatus, filterByStatusAndGender, noFilterBy } = require('../../Controllers/FiltersControllers/FiltersControllers');
 
 const aMayus = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);

@@ -56,6 +56,16 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 CharactersByPage: action.payload
             }
+        case "STATUS":
+            return {
+                ...state,
+                CharactersByPage: action.payload
+            }
+        case "GENDER":
+            return {
+                ...state,
+                CharactersByPage: action.payload
+            }
         default:
             return { ...state }; //Siempre hay que retornar 'copias' del estado
     }

@@ -120,3 +120,29 @@ export const handleOrderCharacters = (orden, pag) => async (dispatch) => {
         console.log("ALGO FALLÓ EN: orderCharacters.");
     }
 }
+
+export const handleStatusCharacters = (status, pag) => async (dispatch) => {
+    try { 
+        const response = (await axios.get(`filters/?status=${status}&page=${pag}&size=19.5`)).data;
+        console.log("BANDERA RESPONSE.DATA", response);
+        return dispatch({
+            type: "STATUS",
+            payload: response
+        })
+    } catch (error) {
+        console.log("ALGO FALLÓ EN: statusCharacters.");
+    }
+}
+
+export const handleGenderCharacters = (gender, pag) => async (dispatch) => {
+    try { 
+        const response = (await axios.get(`filters/?gender=${gender}&page=${pag}&size=19.5`)).data;
+        console.log("BANDERA RESPONSE.DATA", response);
+        return dispatch({
+            type: "GENDER",
+            payload: response
+        })
+    } catch (error) {
+        console.log("ALGO FALLÓ EN: genderCharacters.");
+    }
+}
