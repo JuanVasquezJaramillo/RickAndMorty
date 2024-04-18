@@ -1,5 +1,34 @@
 .contenedorFiltros {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 20px;
-  }
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px;
+}
+
+.selectFiltro {
+  display: block;
+  width: fit-content;
+  height: fit-content;
+  padding: .4em 1.4em .3em .8em;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  border: 1px solid #aaa;
+  box-shadow: 0 1px 0 1px rgba (0, 0, 0, .03);
+  border-radius: .3em;
+  cursor: pointer;
+  background-image: linear-gradient(#11862b, #45fa1885);
+  transition: background-color 0.3s, transform 0.3s;
+  text-decoration-line: none;
+  color: aliceblue;
+}
+
+.selectFiltro:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  border-color: #646cff;
+}
+
+.optionFiltro {
+  color: #11862b;
+ /*TO-DO*/ 
+}

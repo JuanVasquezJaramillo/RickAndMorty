@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from "react";
+import { ObtenerPorPagina, paginaActual, userSearch} from '../../redux/actions';
 import estilo from './paginado.module.css'
 import Cards from '../../components/Cards/Cards'
-import { ObtenerPorPagina, paginaActual, userSearch, handleOrderCharacters, handleStatusCharacters, handleGenderCharacters } from '../../redux/actions';
 import Filtros from '../Filtros/filtros.jsx';
 const Paginado = () => {
 
