@@ -28,18 +28,18 @@ const Filtros = () => {
 
         <>
             <div className={estilo.contenedorFiltros}>
-                <select name="" id="" onChange={event => handleOrder(event)} >
+                <select className={estilo.selectFiltro} name="" id="" onChange={event => handleOrder(event)} >
                     <option value="any">CUALQUIER ORDEN</option>
                     <option value="asc">↑ ORDENAR DE A-Z</option>
                     <option value="desc">↓ ORDENAR DE Z-A</option>
                 </select>
-                <select name="" id="" onChange={event => handleStatus(event)}>
+                <select className={estilo.selectFiltro} name="" id="" onChange={event => handleStatus(event)}>
                     <option value="anyStatus">CUALQUIER ESTADO</option>
                     <option value="alive">VIVO</option>
                     <option value="dead">MUERTO</option>
                     <option value="unknown">DESCONOCIDO</option>
                 </select>
-                <select name="" id="" onChange={event => handleGender(event)}>
+                <select className={estilo.selectFiltro} name="" id="" onChange={event => handleGender(event)}>
                     <option value="anyGender">CUALQUIER GÉNERO</option>
                     <option value="Female">FEMENINO</option>
                     <option value="Male">MASCULINO</option>
