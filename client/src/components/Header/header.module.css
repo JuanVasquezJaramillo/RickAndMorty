@@ -16,7 +16,7 @@
 }
 
 .subContenedor {
-    animation: glitch 1s linear infinite;
+    animation: glitch 0.82s linear infinite;
 }
 
 @keyframes glitch {
