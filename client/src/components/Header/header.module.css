@@ -13,6 +13,7 @@
     font-size: 96px;
     background-image: linear-gradient(#0fc737, #0a300169);
     font-family: "get_schwifty";
+    cursor: default;
 }
 
 .subContenedor {

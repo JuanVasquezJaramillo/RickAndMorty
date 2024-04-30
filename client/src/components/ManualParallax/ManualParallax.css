@@ -1,0 +1,56 @@
+body,
+html {
+    margin: 0;
+}
+
+.bgimg-1,
+.bgimg-2,
+.bgimg-3 {
+    position: relative;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bgimg-1 {
+    background-image: url(../../assets/RickAndMortyPromo.jpg);
+    min-height: 100vh;
+}
+
+.bgimg-2 {
+    background-image: url(../../assets/RickAndMortyDiscussing.jpg);
+    min-height: 600px;
+}
+
+.bgimg-3 {
+    background-image: url(../../assets/rickAnMortyFallingIntoLava.jpg);
+    min-height: 100vh;
+}
+
+.caption {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color: #000;
+}
+
+.caption,
+.border {
+    background-color: #111;
+    color: #fff;
+    padding: 18px;
+    font-size: 25px;
+    letter-spacing: 10px;
+}
+
+.section {
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 200px;
+}
