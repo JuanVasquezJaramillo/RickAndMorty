@@ -1,5 +1,6 @@
 import React from "react";
 import "./ManualParallax.css";
+import Carrousel from "../Carrousel/Carrousel";
 
 const ManualParallax = () => {
     return (
@@ -31,7 +32,8 @@ const ManualParallax = () => {
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt est sint earum hic rem aperiam delectus? Ea, temporibus nesciunt ipsum perspiciatis provident animi, aliquam molestiae quaerat porro debitis fuga officiis.
                 </p>
             </div>
-
+            {/* LLAMADO Y RENDERIZADO DEL COMPONENTE CARROUSEL */}
+            <Carrousel />
             {/* IMAGEN Y SECCIÓN 3  */}
             <div className="bgimg-3">
                 <div className="caption">
