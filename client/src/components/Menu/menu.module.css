@@ -1,0 +1,98 @@
+.contenedorPadre {
+    display: flex;
+    justify-content: center;
+}
+
+.contenedorCard {
+    display: flex;
+    flex-direction: column;
+    background-color: #fdddca;
+    border: 5px solid black;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.contenedorCard {
+    overflow: hidden;
+}
+
+.contenedorCard:hover {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+}
+
+.contenedorSearchBar {
+    /*
+    background-color: rgba(53, 78, 100, 0.767);
+    */
+    background-color: #11862a86;
+    padding: 20px;
+}
+
+/*ESTILOS BARRA LATERAL DESPLEGABLE*/
+.contenedorSideBar {
+    width: 240px;
+    z-index: +1;
+    background-color: rgba(0, 0, 0, 0.555);
+    position: absolute;
+    height: 95vh;
+    padding: 0 30px;
+    transition: all 1s;
+}
+
+ul {
+    padding: 0;
+}
+
+ul li {
+    list-style-type: none;
+    margin: 10px 0;
+}
+
+ul li a {
+    color: rgb(155, 59, 59);
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 6px;
+}
+
+ul li a:hover,
+ul li a.active {
+    background: #fdddca;
+}
+
+.icono {
+    background-image: url(../../assets/icons8-menu-50.png);
+    display: block;
+    width: 50px;
+    height: 50px;
+    padding: .4em 1.4em .3em .8em;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    border: 1px solid #aaa;
+    box-shadow: 0 1px 0 1px rgba (0, 0, 0, .03);
+    border-radius: .3em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    text-decoration-line: none;
+    background-color: #13832b;
+}
+
+.contenedor {
+    display: flex;
+    justify-content:flex-end;
+    width: 100%;
+    height: 50px;
+    padding: 0px;
+    margin: 0px;
+    background-image: linear-gradient(#0fc737, #0a300169);
+}
+
+.icono:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    border-color: #646cff;
+}

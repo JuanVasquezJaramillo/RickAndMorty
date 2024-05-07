@@ -33,8 +33,8 @@ const Carrousel = () => {
     return (
         <>
             <div className={style.slideshowContainer}>
-                <Link to={`/detail/${Characters?.[img].id}`}>
-                    <img src={Characters?.[img].image} alt="NOT FOUND ANYTHING" className={style.img} ></img>
+                <Link to={`/detail/${Characters?.[img]?.id}`}>
+                    <img src={Characters?.[img]?.image} alt="NOT FOUND ANYTHING" className={style.img} ></img>
                 </Link>
             </div>
             {/* DIV DOTS AND INTERACTION */}
