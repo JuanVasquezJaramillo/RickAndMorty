@@ -8,12 +8,12 @@ const ManualParallax = () => {
             {/* IMAGEN Y SECCIÓN 1 */}
             <div className="bgimg-1">
                 <div className="caption">
-                    <span className="border">¡BIENVENIDOS!</span>
+                    <span className="border">Rick And Morty Ultimate Project</span>
                 </div>
             </div>
 
             <div className="section">
-                <h3 className="border">SINOPSIS</h3>
+                <h3 className="border">ACERCA DEL PROYECTO</h3>
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit praesentium neque iure autem voluptates eveniet rem quisquam laboriosam quis reprehenderit corporis odio, vitae, nobis sit consectetur ad esse facilis provident!
                 </p>

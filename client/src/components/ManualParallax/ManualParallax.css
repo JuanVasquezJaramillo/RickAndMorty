@@ -35,6 +35,7 @@ html {
     width: 100%;
     text-align: center;
     color: #000;
+    cursor: default;
 }
 
 .caption,
@@ -44,6 +45,7 @@ html {
     padding: 18px;
     font-size: 25px;
     letter-spacing: 10px;
+    cursor: default;
 }
 
 .section {
@@ -53,4 +55,5 @@ html {
     justify-content: center;
     flex-direction: column;
     padding: 0 200px;
+    cursor: default;
 }
