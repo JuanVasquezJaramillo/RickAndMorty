@@ -16,19 +16,19 @@ const Cart = () => {
                         <div className={estilo.contenedorSideBar}>
                             <ul>
                                 <li>
-                                    <a href="http://localhost:5173/">INICIO</a>
+                                    <a href="http://localhost:5173/">INICIAR SESIÓN</a>
                                 </li>
                             </ul>
                             <ul>
                                 <li>
-                                    <a href="http://localhost:5173/about">ACERCA DE</a>
+                                    <a href="http://localhost:5173/about">REGISTRARSE</a>
                                 </li>
                             </ul>
-                            <ul>
+                            {/* <ul>
                                 <li>
                                     <a href="http://localhost:5173/favorites">FAVORITOS</a>
                                 </li>
-                            </ul>
+                            </ul> */}
                         </div>
                     </>) : <></>}
 
