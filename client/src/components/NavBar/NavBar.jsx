@@ -8,13 +8,13 @@ const NavBar = () => {
         <div className={style.contenedor}>
             {/* <SearchBar /> */}
             <Link className={style.boton} to='/'>
-                INICIO
+                PERSONAJES
             </Link>
             <Link className={style.boton} to='/about'>
-                Acerca de
+                SABER MÁS 
             </Link>
-            <Link className={style.boton} to='/favorites'>
-                Favoritos
+            <Link className={style.boton} to='/juegos'>
+                JUEGOS
             </Link>
         </div>
     );
