@@ -109,7 +109,7 @@ export const userSearch = (boolean) => async (dispatch) => {
 }
 
 export const handleOrderCharacters = (orden, pag) => async (dispatch) => {
-    try { 
+    try {
         const response = (await axios.get(`orders/?orderby=${orden}&page=${pag}&size=19.5`)).data;
         console.log("BANDERA RESPONSE.DATA", response);
         return dispatch({
@@ -122,7 +122,7 @@ export const handleOrderCharacters = (orden, pag) => async (dispatch) => {
 }
 
 export const handleStatusCharacters = (status, pag) => async (dispatch) => {
-    try { 
+    try {
         const response = (await axios.get(`filters/?status=${status}&page=${pag}&size=19.5`)).data;
         console.log("BANDERA RESPONSE.DATA", response);
         return dispatch({
@@ -135,7 +135,7 @@ export const handleStatusCharacters = (status, pag) => async (dispatch) => {
 }
 
 export const handleGenderCharacters = (gender, pag) => async (dispatch) => {
-    try { 
+    try {
         const response = (await axios.get(`filters/?gender=${gender}&page=${pag}&size=19.5`)).data;
         console.log("BANDERA RESPONSE.DATA", response);
         return dispatch({
@@ -144,5 +144,17 @@ export const handleGenderCharacters = (gender, pag) => async (dispatch) => {
         })
     } catch (error) {
         console.log("ALGO FALLÓ EN: genderCharacters.");
+    }
+}
+
+export const obtenerEpisodios = () => async (dispatch) => {
+    try {
+        const response = (await axios.get('/episodes')).data;
+        return dispatch({
+            type: "OBTENER_EPISODIOS",
+            payload: response
+        });
+    } catch (error) {
+
     }
 }

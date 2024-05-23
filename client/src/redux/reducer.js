@@ -10,6 +10,7 @@ const initialState = {
     CharactersByPage: [],
     getByName: [],
     userSearchB: false,
+    allEpisodes: [],
 }
 
 
@@ -65,6 +66,11 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 CharactersByPage: action.payload
+            }
+        case "OBTENER_EPISODIOS":
+            return{
+                ...state,
+                allEpisodes: action.payload
             }
         default:
             return { ...state }; //Siempre hay que retornar 'copias' del estado

@@ -7,15 +7,16 @@ import Detail from './components/Detail/Detail';
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getAllCharacters } from "./redux/actions";
+import FormPage from "./views/FormPage/formpage";
 axios.defaults.baseURL = "http://localhost:3001";
 
 function App() {
   const dispatch = useDispatch();
   const Characters = useSelector(state => state.allCharacters.length)
-  
+
   useEffect(() => {
-    if(!Characters)
-    dispatch(getAllCharacters());
+    if (!Characters)
+      dispatch(getAllCharacters());
   }, [])
 
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/welcome" element={<Landing />} />
         <Route path="/more" element={<About />} />
         <Route path="/detail/:id" element={<Detail />} />
+        <Route path="/form" element={<FormPage />} />
       </Routes>
     </>
   )
