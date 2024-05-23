@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Mono:400');
+
+.contenedorPadre {
+    display: flex;
+}
+
+.contenedor {
+    background-image: linear-gradient(#11862b, #45fa1800);
+    border: 5px solid black;
+    height: auto;
+    width: auto;
+    text-align: center;
+}
+
+.subContenedor {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.contenedorInfo {
+    display: flex;
+    background-image: linear-gradient(#11862b, #45fa1800);
+    align-content: flex-start;
+    flex-direction: column;
+    border-color: black;
+    border-radius: 50px;
+    border: 5px solid black;
+    padding: 40px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    font-style: italic;
+    /* font-family: "get_schwifty"; */
+}
+
+.contenedorEpisode {
+    background-image: linear-gradient(#117e86, #11862b);
+    width: 100%;
+    border-color: black;
+    border-radius: 50px;
+    border: 5px solid black;
+}
+
+.subContenedorEpisode {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 15px;
+}
+
+.subContenedorEpisode2 {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 15px;
+}
+
+.contenedorVideo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.contenedorVideo:hover {
+    -webkit-transform: scale(1.01);
+    transform: scale(1.01);
+}
+
+.titleP1 {
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-style: italic;
+}
+
+.parrafo {
+    width: 400px;
+}
+
+/* @font-face {
+    font-family: "get_schwifty";
+    src: url(../../assets/get_schwifty.ttf);
+} */
+@font-face {
+    font-family: "Sandler_Trial";
+    src: url(../../assets/Sandler_Trial.otf);
+}
+
+.tituloEpisodio {
+    text-align: center;
+    font-family: "Sandler_Trial";
+    font-size: 30px;
+    -webkit-box-shadow: 10px 10px 43px 3px rgb(61, 192, 133);
+    -moz-box-shadow: 10px 10px 43px 3px rgb(156, 189, 174);
+    box-shadow: 10px 10px 43px 3px rgb(54, 63, 59);
+}
+
+.contenedorTituloEpisodio {
+    text-align: center;
+}
+
+.contenedorTituloEpisodio:hover {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.01);
+}
+
+
+.boton {
+    /* background-image: url(../assets/icons8-morty-smith50x50.svg); */
+    background-repeat: no-repeat;
+    height: 50px;
+    width: 50px;
+    background-position: center;
+    cursor: pointer;
+    border-radius: 1px;
+    left: 50%;
+}
+
+.pruebaImg {
+    width: 100%;
+    border-radius: 50%;
+}

@@ -9,7 +9,7 @@ const getEpisodeChar = async (req, res) => {
         // const { data } = await axios.get(`${URL}/${id}`); //destructuramos todas las propiedades de nuestra promesa en su propiedad data.
         const episodios = [];
 
-        for (let i = 0; i < 4; i++) {
+        for (let i = 1; i < 4; i++) {
             const response = (await axios.get(`${URLE}?page=${i}`));
             const episodeData = response.data.results.map(episodio =>({
                 id: episodio.id,
