@@ -21,18 +21,16 @@ const FormPage = () => {
                 </div>
                 <div className={estilo.contenedorPadre}>
                     <div className={estilo.contenedorInfo}>
-                        <img src="" alt='' className={estilo.pruebaImg} />
+                        <input type="file" />
+                        <img src="" alt='not found' style={{ width: "100%", borderRadius: "50%", backgroundColor: "white" }} />
                         <h1>Name: </h1>
                         <input type="text" />
                         <h1>Status: </h1>
-                        <div>
-                            <input type="checkbox" />
-                            <label htmlFor="">vivo</label>
-                            <input type="checkbox" />
-                            <label htmlFor="">muerto</label>
-                            <input type="checkbox" />
-                            <label htmlFor="">desconocido</label>
-                        </div>
+                        <select name="" id="">
+                            <option value="">Vivo</option>
+                            <option value="">Muerto</option>
+                            <option value="">Desconocido</option>
+                        </select>
                         <h1>Species: </h1>
                         <input type="text" name="" id="" />
                         <h1>Gender: </h1>
@@ -43,6 +41,8 @@ const FormPage = () => {
                         </select>
                         <h1>Origin: </h1>
                         <input type="text" />
+                        <h1></h1>
+                        <button>GUARDAR</button>
                     </div>
                     <div className={estilo.contenedorEpisode}>
                         <div className={estilo.subContenedorEpisode}>
@@ -65,7 +65,7 @@ const FormPage = () => {
                                         </p>
                                     </div>
                                     <div className={estilo.contenedorVideo}>
-                                        <input type="text" style={{width: "716", height: "403", backgroundColor: "white", color: "black"}} />
+                                        <input type="text" style={{ width: "716", height: "403", backgroundColor: "white", color: "black" }} />
                                         {/* <iframe width="716" height="403" src="https://www.youtube.com/embed/BFTSrbB2wII" title="Rick and Morty Season 1 extended promo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                                      */}
                                     </div>
